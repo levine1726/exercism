@@ -30,4 +30,10 @@
   Java and JavaScript, then finally returns a count of the total number
   of languages."
   []
-  (count-languages (add-language (add-language (remove-language (add-language (add-language (new-list) "Clojure") "Lisp")) "Java") "JavaScript")))
+  (-> (new-list)
+      (add-language "Clojure")
+      (add-language "Lisp")
+      (remove-language)
+      (add-language "Java")
+      (add-language "JavaScript")
+      (count-languages)))
