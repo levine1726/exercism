@@ -15,12 +15,8 @@ main () {
   if [[ $((number % 7)) == 0  ]]; then
     response="${response}Plong"
   fi
-
-  if [[ -z "$response" ]]; then
-    response=$number
-  fi
   
-  echo "$response"
+  echo ${response:-$1}
 }
 
 main "$@"
