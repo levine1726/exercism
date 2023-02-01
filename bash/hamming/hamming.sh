@@ -6,12 +6,12 @@
 
     if [[ $# -ne 2 ]]; then
       echo "Usage: hamming.sh <string1> <string2>"
-      exit -1
+      exit 2
     fi
     
-    if [[ ${#strand1} != ${#strand2} ]]; then
+    if [[ ${#strand1} != "${#strand2}" ]]; then
       echo "strands must be of equal length"
-      exit -1
+      exit 2
     fi
 
     hamming_difference=0
